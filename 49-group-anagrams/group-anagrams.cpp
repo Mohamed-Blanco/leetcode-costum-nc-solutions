@@ -15,7 +15,7 @@ public:
             std::sort(sortedStr.begin(), sortedStr.end());
 
             // group
-            groups[sortedStr].push_back(str); // handles both cases cleanly
+            groups[sortedStr].emplace_back(str); // handles both cases cleanly
         } 
 
         std::vector<std::vector<std::string>> result {}; 
