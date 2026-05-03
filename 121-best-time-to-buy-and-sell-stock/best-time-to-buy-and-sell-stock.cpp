@@ -21,6 +21,6 @@ public:
             }
         }
 
-        return maxProfit > 0 ? maxProfit : 0; 
+        return maxProfit ; 
     }   
 };
