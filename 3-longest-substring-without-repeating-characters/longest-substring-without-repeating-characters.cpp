@@ -14,7 +14,7 @@ public:
             {
                 if(maxRange < (r-l))
                 {
-                maxRange = (r-l); 
+                    maxRange = (r-l); 
                 }
                 chars[s[l]] -= 1; 
                 ++l;
@@ -23,11 +23,6 @@ public:
             ++r; 
         } 
 
-        if(maxRange < (r-l))
-        {
-            maxRange = (r-l); 
-        }
-
-        return maxRange; 
+        return maxRange > (r-l) ? maxRange : (r-l); 
     }
 };
