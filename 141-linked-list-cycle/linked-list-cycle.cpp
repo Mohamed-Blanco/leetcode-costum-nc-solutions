@@ -13,20 +13,27 @@ class Solution {
 public:
     bool hasCycle(ListNode *head) {
         
-        ListNode* current = head ; 
-        ListNode* dummy = new ListNode(0,head);  
+        ListNode* slow = head;
+        ListNode* fast = head ; 
 
-        std::unordered_set<ListNode*> nodes {};  
-        while(current != nullptr )
+        if(head != nullptr && head->next != nullptr && fast->next != nullptr && fast->next->next != nullptr)
         {
-            if(nodes.find(current) == nodes.end())
-            {
-                nodes.insert(current); 
-            }else
+            fast = fast->next->next;   
+        }else
+        {
+            return false ; 
+        }
+
+        
+        while(fast->next != nullptr && fast->next->next != nullptr)
+        {
+            if(fast == slow)
             {
                 return true ; 
             }
-            current = current->next ; 
+
+            fast = fast->next->next; 
+            slow = slow->next;
         }
 
         return false ; 
