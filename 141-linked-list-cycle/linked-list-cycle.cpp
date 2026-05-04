@@ -16,12 +16,12 @@ public:
         ListNode* current = head ; 
         ListNode* dummy = new ListNode(0,head);  
 
-        std::map<ListNode*,bool> nodes {};  
+        std::unordered_set<ListNode*> nodes {};  
         while(current != nullptr )
         {
-            if(!nodes[current])
+            if(nodes.find(current) == nodes.end())
             {
-                nodes[current] = true ; 
+                nodes.insert(current); 
             }else
             {
                 return true ; 
