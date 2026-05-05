@@ -13,8 +13,9 @@ public:
         ListNode* current = slow->next;
         slow->next = nullptr;        // ← FIX 1: sever the two halves
         ListNode* prev = nullptr;
+        ListNode* next = nullptr; 
         while (current != nullptr) {
-            ListNode* next = current->next;
+            next = current->next;
             current->next = prev;
             prev = current;
             current = next;
