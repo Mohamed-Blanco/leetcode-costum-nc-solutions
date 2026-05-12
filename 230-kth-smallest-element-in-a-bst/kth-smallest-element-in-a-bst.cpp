@@ -37,6 +37,6 @@ public:
     int kthSmallest(TreeNode* root, int k) {
         
         DFS(root);
-        return path.at(k-1); 
+        return path[k-1]; 
     }
 };
