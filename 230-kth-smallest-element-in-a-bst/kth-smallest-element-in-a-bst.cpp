@@ -12,11 +12,11 @@
 class Solution {
 public:
     std::vector<int> path{}; 
-    std::vector<int> DFS(TreeNode* root)
+    void DFS(TreeNode* root)
     {
         if(root == nullptr)
         {
-            return path; 
+            return ;  
         }
 
         if(root->left != nullptr)
@@ -31,7 +31,7 @@ public:
             DFS(root->right); 
         }
 
-        return path; 
+        return ; 
     }
 
     int kthSmallest(TreeNode* root, int k) {
