@@ -1,7 +1,7 @@
 class Solution {
 public:
 
-    bool dfs(int index,int i , int j , std::string word, int n ,int m , vector<vector<char>> &board)
+    bool dfs(int index,int i , int j , std::string& word, int n ,int m , vector<vector<char>> &board)
     {
         if(index == word.size()) return true ; 
         if(i < 0 || i >= n || j < 0 || j >= m || word[index] != board[i][j]) //inssuring that are indexes are not out of bound and also the current char is in there 
